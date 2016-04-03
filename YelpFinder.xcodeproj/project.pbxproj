@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A04273FD1CB09F8800ABBA16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04273FC1CB09F8800ABBA16 /* AppDelegate.swift */; };
-		A04273FF1CB09F8800ABBA16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04273FE1CB09F8800ABBA16 /* ViewController.swift */; };
 		A04274021CB09F8800ABBA16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04274001CB09F8800ABBA16 /* Main.storyboard */; };
 		A04274051CB09F8800ABBA16 /* YelpFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A04274031CB09F8800ABBA16 /* YelpFinder.xcdatamodeld */; };
 		A04274071CB09F8800ABBA16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04274061CB09F8800ABBA16 /* Assets.xcassets */; };
 		A042740A1CB09F8800ABBA16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04274081CB09F8800ABBA16 /* LaunchScreen.storyboard */; };
 		A04274151CB09F8800ABBA16 /* YelpFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274141CB09F8800ABBA16 /* YelpFinderTests.swift */; };
+		A04274221CB0A17000ABBA16 /* YelpSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274211CB0A17000ABBA16 /* YelpSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +29,6 @@
 /* Begin PBXFileReference section */
 		A04273F91CB09F8500ABBA16 /* YelpFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04273FC1CB09F8800ABBA16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A04273FE1CB09F8800ABBA16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A04274011CB09F8800ABBA16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A04274041CB09F8800ABBA16 /* YelpFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YelpFinder.xcdatamodel; sourceTree = "<group>"; };
 		A04274061CB09F8800ABBA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		A04274101CB09F8800ABBA16 /* YelpFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04274141CB09F8800ABBA16 /* YelpFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpFinderTests.swift; sourceTree = "<group>"; };
 		A04274161CB09F8800ABBA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A04274211CB0A17000ABBA16 /* YelpSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				A04273FC1CB09F8800ABBA16 /* AppDelegate.swift */,
-				A04273FE1CB09F8800ABBA16 /* ViewController.swift */,
+				A04274211CB0A17000ABBA16 /* YelpSearchViewController.swift */,
 				A04274001CB09F8800ABBA16 /* Main.storyboard */,
 				A04274061CB09F8800ABBA16 /* Assets.xcassets */,
 				A04274081CB09F8800ABBA16 /* LaunchScreen.storyboard */,
@@ -200,8 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04274221CB0A17000ABBA16 /* YelpSearchViewController.swift in Sources */,
 				A04274051CB09F8800ABBA16 /* YelpFinder.xcdatamodeld in Sources */,
-				A04273FF1CB09F8800ABBA16 /* ViewController.swift in Sources */,
 				A04273FD1CB09F8800ABBA16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +392,7 @@
 				A042741B1CB09F8800ABBA16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A042741C1CB09F8800ABBA16 /* Build configuration list for PBXNativeTarget "YelpFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +401,7 @@
 				A042741E1CB09F8800ABBA16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

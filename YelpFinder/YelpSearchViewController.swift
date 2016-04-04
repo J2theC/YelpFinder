@@ -7,6 +7,7 @@ class YelpSearchViewController : UIViewController  {
     @IBOutlet weak var search: UIBarButtonItem!
     private var zipcodeFinder : ZipcodeFinder?
     private let resultsSegueIdentifier = "resultsSegue"
+    private var request : YelpSearchRequest?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,7 @@ class YelpSearchViewController : UIViewController  {
             if let zipcode = zipcode where !zipcode.isEmpty {
                 self.searchBar.text = zipcode
                 self.showLoadingIndicatorForSearchParamater(zipcode)
+                self.request = YelpSearchRequest(zipcode: zipcode)
             }
         }
         self.zipcodeFinder = ZipcodeFinder(delegate: self, completionBlock: firstZipcode)

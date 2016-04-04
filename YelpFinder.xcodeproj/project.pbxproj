@@ -18,6 +18,9 @@
 		A04274261CB2050B00ABBA16 /* YelpResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274251CB2050B00ABBA16 /* YelpResultCell.swift */; };
 		A04274281CB216EF00ABBA16 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274271CB216EF00ABBA16 /* Restaurant.swift */; };
 		A042742A1CB258AA00ABBA16 /* ZipcodeFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274291CB258AA00ABBA16 /* ZipcodeFinder.swift */; };
+		A042742C1CB270A500ABBA16 /* YelpSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042742B1CB270A500ABBA16 /* YelpSearchRequest.swift */; };
+		A04274321CB2C0A100ABBA16 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274311CB2C0A100ABBA16 /* DictionaryExtension.swift */; };
+		A04274341CB2C13C00ABBA16 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274331CB2C13C00ABBA16 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,10 @@
 		A04274251CB2050B00ABBA16 /* YelpResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpResultCell.swift; sourceTree = "<group>"; };
 		A04274271CB216EF00ABBA16 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		A04274291CB258AA00ABBA16 /* ZipcodeFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipcodeFinder.swift; sourceTree = "<group>"; };
+		A042742B1CB270A500ABBA16 /* YelpSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpSearchRequest.swift; sourceTree = "<group>"; };
+		A042742D1CB2AD3200ABBA16 /* YelpFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YelpFinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		A04274311CB2C0A100ABBA16 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		A04274331CB2C13C00ABBA16 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +79,7 @@
 				A04273FB1CB09F8700ABBA16 /* YelpFinder */,
 				A04274131CB09F8800ABBA16 /* YelpFinderTests */,
 				A04273FA1CB09F8500ABBA16 /* Products */,
+				A042742D1CB2AD3200ABBA16 /* YelpFinder-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +100,9 @@
 				A04274231CB0A7E700ABBA16 /* YelpResultsViewController.swift */,
 				A04274251CB2050B00ABBA16 /* YelpResultCell.swift */,
 				A04274291CB258AA00ABBA16 /* ZipcodeFinder.swift */,
+				A042742B1CB270A500ABBA16 /* YelpSearchRequest.swift */,
+				A04274311CB2C0A100ABBA16 /* DictionaryExtension.swift */,
+				A04274331CB2C13C00ABBA16 /* StringExtension.swift */,
 				A04274271CB216EF00ABBA16 /* Restaurant.swift */,
 				A04274001CB09F8800ABBA16 /* Main.storyboard */,
 				A04274061CB09F8800ABBA16 /* Assets.xcassets */,
@@ -212,9 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04274321CB2C0A100ABBA16 /* DictionaryExtension.swift in Sources */,
 				A04274221CB0A17000ABBA16 /* YelpSearchViewController.swift in Sources */,
+				A04274341CB2C13C00ABBA16 /* StringExtension.swift in Sources */,
 				A04274051CB09F8800ABBA16 /* YelpFinder.xcdatamodeld in Sources */,
 				A04274281CB216EF00ABBA16 /* Restaurant.swift in Sources */,
+				A042742C1CB270A500ABBA16 /* YelpSearchRequest.swift in Sources */,
 				A04274241CB0A7E700ABBA16 /* YelpResultsViewController.swift in Sources */,
 				A042742A1CB258AA00ABBA16 /* ZipcodeFinder.swift in Sources */,
 				A04273FD1CB09F8800ABBA16 /* AppDelegate.swift in Sources */,
@@ -347,10 +361,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = YelpFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcfernandez.yelpfinder.YelpFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YelpFinder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -358,10 +375,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = YelpFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcfernandez.yelpfinder.YelpFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YelpFinder-Bridging-Header.h";
 			};
 			name = Release;
 		};

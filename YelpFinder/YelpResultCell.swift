@@ -2,7 +2,9 @@
 import UIKit
 
 class YelpResultCell: UITableViewCell {
-
+    
+    static let reuseIdentifier = "YelpResultCellIdentifier"
+    
     @IBOutlet weak var restaurantImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var distance: UILabel!

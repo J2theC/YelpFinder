@@ -48,7 +48,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbA-5G-c1k">
                                 <rect key="frame" x="0.0" y="108" width="600" height="448"/>
                                 <connections>
-                                    <segue destination="T8u-M8-dNG" kind="embed" id="y6Z-Xf-Evc"/>
+                                    <segue destination="T8u-M8-dNG" kind="embed" identifier="resultsSegue" id="y6Z-Xf-Evc"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -67,10 +67,15 @@
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="uAm-mZ-obS"/>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="1hq-kS-hiC"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filter" destination="uAm-mZ-obS" id="f7S-G5-2Qs"/>
+                        <outlet property="search" destination="1hq-kS-hiC" id="YE8-EF-28n"/>
+                        <outlet property="searchBar" destination="BrQ-Rw-r1C" id="GCM-Fa-L0g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMF-ZJ-aaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="658" y="461"/>
+            <point key="canvasLocation" x="606" y="468"/>
         </scene>
         <!--Yelp Results View Controller-->
         <scene sceneID="IIt-GI-xgC">
@@ -82,7 +87,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" rowHeight="80" id="UFa-Su-L1I" customClass="YelpResultCell" customModule="YelpFinder" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="YelpResultCellIdentifier" rowHeight="80" id="UFa-Su-L1I" customClass="YelpResultCell" customModule="YelpFinder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UFa-Su-L1I" id="6C4-81-KmY">

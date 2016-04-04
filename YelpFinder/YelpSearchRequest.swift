@@ -59,7 +59,7 @@ class YelpSearchRequest {
     YelpSearchRequest.sharedSession.downloadRequest(self)
   }
   
-  private var parameterRepresentation : Dictionary <String, AnyObject> {
+  var parameterRepresentation : Dictionary <String, AnyObject> {
     return ["term" : YelpSearchRequest.defaultSearchTerm, "location": self.zipcode, "radius_filter" : self.radius, "sort" : self.sortOrder.rawValue, "offset" : self.currentOffsetPosition]
   }
   

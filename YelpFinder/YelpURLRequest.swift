@@ -29,8 +29,7 @@ class YelpURLRequest : NSMutableURLRequest {
   }
   
   required init (searchRequest: YelpSearchRequest) {
-    let basePath = YelpURLRequest.baseSearchPath
-    let searchPath = YelpURLRequest.baseSearchPath.substringToIndex(basePath.endIndex.predecessor()) + "?" + searchRequest.description + "&oauth_consumer_key=ClyDZIHf3cItVbNc4OWwjA"
+    let searchPath = YelpURLRequest.baseSearchPath + "?" + searchRequest.description
     let baseURL = NSURL(string: searchPath)!
     super.init(URL:baseURL, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: YelpURLRequest.defaultTimeoutInterval)
     self.HTTPMethod = YelpURLRequest.defaultMethod
@@ -39,7 +38,8 @@ class YelpURLRequest : NSMutableURLRequest {
     searchParameter += parameters
     parameters["oauth_signature"] = self.signatureFromParameters(searchParameter)
     var headers = YelpURLRequest.baseHeader
-    headers["Authorization"] = "OAuth \(parameters.asHeaderString)"
+//    headers["Authorization"] = "OAuth \(parameters.asHeaderString)"
+    headers["Authorization"] = "OAuth oauth_token=\"\(YelpURLRequest.token)\", oauth_nonce=\"\(NSUUID().UUIDString)\", oauth_signature_method=\"\(YelpURLRequest.signatureMethod)\", oauth_consumer_key=\"\(YelpURLRequest.consumerKey)\", oauth_timestamp=\"\(Int(NSDate().timeIntervalSince1970))\", oauth_version=\"1.0\", oauth_signature=\"\(self.signatureFromParameters(searchParameter))\""
     self.allHTTPHeaderFields = headers
   }
   
@@ -73,7 +73,7 @@ class YelpURLRequest : NSMutableURLRequest {
            signatureData!.bytes,
            signatureData!.length,
            bytes)
-    return NSData(bytes: bytes, length: length).base64EncodedStringWithOptions(.Encoding76CharacterLineLength)
+    return NSData(bytes: bytes, length: length).base64EncodedStringWithOptions(.Encoding76CharacterLineLength).pathEncodedString
   }
   
 }

@@ -8,6 +8,11 @@ class YelpSession {
   func downloadRequest(request: YelpSearchRequest) -> Int {
     let urlRequest = YelpURLRequest(searchRequest: request)
     let task = self.session.dataTaskWithRequest(urlRequest) { (data, response, error) in
+      print(response)
+      print(urlRequest)
+      print(urlRequest.allHTTPHeaderFields)
+      let string = NSString(data: data!, encoding: NSUTF8StringEncoding)
+      print(string)
       switch (data, response as? NSHTTPURLResponse, error) {
       case (_, _, let .Some(error)):
         print(error)

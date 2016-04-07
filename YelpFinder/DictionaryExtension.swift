@@ -1,11 +1,12 @@
 import Foundation
 
-extension Dictionary {
+extension Dictionary where Key: StringLiteralConvertible, Value: AnyObject {
   
   var asEncodedString : String {
     var string = String()
-    for (key, value) in self {
-      string.appendContentsOf("\(key)=\(value)&")
+    let stringArray = Array(self.keys.map {String($0)}).sort(<)
+    for key in stringArray {
+      string.appendContentsOf("\(key)=\(self[key as! Key]!)&")
     }
     string.removeAtIndex(string.endIndex.predecessor())
     return string.pathEncodedString
@@ -13,8 +14,9 @@ extension Dictionary {
   
   var asHeaderString : String {
     var string = String()
-    for (key, value) in self {
-      string.appendContentsOf("\(key)=\"\(value)\", ")
+    let stringArray = Array(self.keys.map {String($0)}).sort(<)
+    for currentKey in stringArray {
+      string.appendContentsOf("\(currentKey)=\"\(self [currentKey as! Key]!)\", ")
     }
     string.removeAtIndex(string.endIndex.predecessor())
     string.removeAtIndex(string.endIndex.predecessor())

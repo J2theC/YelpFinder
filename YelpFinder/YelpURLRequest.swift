@@ -17,7 +17,7 @@ class YelpURLRequest : NSMutableURLRequest {
     dictionary["oauth_consumer_key"] = "\(self.consumerKey)"
     dictionary["oauth_signature_method"] = "\(self.signatureMethod)"
     dictionary["oauth_version"] = "1.0"
-    dictionary["oauth_timestamp"] = "\(Int(NSDate().timeIntervalSince1970))"
+//    dictionary["oauth_timestamp"] = "\(Int(NSDate().timeIntervalSince1970))"
     dictionary["oauth_nonce"] = "\(NSUUID().UUIDString)"
     return dictionary
   }
@@ -30,16 +30,19 @@ class YelpURLRequest : NSMutableURLRequest {
   
   required init (searchRequest: YelpSearchRequest) {
     let searchPath = YelpURLRequest.baseSearchPath + "?" + searchRequest.description
+    let time = Int(NSDate().timeIntervalSince1970)
     let baseURL = NSURL(string: searchPath)!
     super.init(URL:baseURL, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: YelpURLRequest.defaultTimeoutInterval)
     self.HTTPMethod = YelpURLRequest.defaultMethod
     var parameters = YelpURLRequest.baseParameter
+    parameters["oauth_timestamp"] = time
     var searchParameter = searchRequest.parameterRepresentation
     searchParameter += parameters
-    parameters["oauth_signature"] = self.signatureFromParameters(searchParameter)
+    let signature = self.signatureFromParameters(searchParameter)
+    parameters["oauth_signature"] = signature
     var headers = YelpURLRequest.baseHeader
 //    headers["Authorization"] = "OAuth \(parameters.asHeaderString)"
-    headers["Authorization"] = "OAuth oauth_token=\"\(YelpURLRequest.token)\", oauth_nonce=\"\(NSUUID().UUIDString)\", oauth_signature_method=\"\(YelpURLRequest.signatureMethod)\", oauth_consumer_key=\"\(YelpURLRequest.consumerKey)\", oauth_timestamp=\"\(Int(NSDate().timeIntervalSince1970))\", oauth_version=\"1.0\", oauth_signature=\"\(self.signatureFromParameters(searchParameter))\""
+    headers["Authorization"] = "OAuth oauth_token=\"\(YelpURLRequest.token)\", oauth_nonce=\"\(NSUUID().UUIDString)\", oauth_signature_method=\"\(YelpURLRequest.signatureMethod)\", oauth_consumer_key=\"\(YelpURLRequest.consumerKey)\", oauth_timestamp=\"\(time)\", oauth_version=\"1.0\", oauth_signature=\"\(signature)\""
     self.allHTTPHeaderFields = headers
   }
   
@@ -48,9 +51,9 @@ class YelpURLRequest : NSMutableURLRequest {
   }
   
   private func signatureFromParameters (parameters: Dictionary<String, AnyObject>) -> String {
-    let signature = [YelpURLRequest.defaultMethod,
-      YelpURLRequest.baseSearchPath.pathEncodedString,
+    let signature = [YelpURLRequest.defaultMethod + "&".pathEncodedString + YelpURLRequest.baseSearchPath.pathEncodedString,
       parameters.asEncodedString].joinWithSeparator("&".pathEncodedString)
+    print("coming with signature \(signature)")
     let secrets = [YelpURLRequest.consumerSecret, YelpURLRequest.tokenSecret].joinWithSeparator("&")
     func encoded (string: String) -> NSData? { return string.dataUsingEncoding(NSUTF8StringEncoding) }
     let signatureData = encoded(signature)

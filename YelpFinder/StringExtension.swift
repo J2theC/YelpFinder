@@ -4,7 +4,7 @@ extension String {
   
   var pathEncodedString : String {
     let characterSet = NSCharacterSet(charactersInString: "!*'();:@&=+$,/?%#[]").invertedSet
-    return self.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!
+    return (self as NSString).stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!
   }
   
 }

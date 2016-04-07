@@ -60,7 +60,7 @@ class YelpSearchRequest {
   }
   
   var parameterRepresentation : Dictionary <String, AnyObject> {
-    return ["term" : YelpSearchRequest.defaultSearchTerm, "location": self.zipcode, "radius_filter" : self.radius, "sort" : self.sortOrder.rawValue, "offset" : self.currentOffsetPosition]
+    return ["term" : YelpSearchRequest.defaultSearchTerm, "location": self.zipcode, "radius_filter" : self.radius, "sort" : self.sortOrder.rawValue, "offset" : self.currentOffsetPosition, "limit" : "3"]
   }
   
 }
@@ -68,7 +68,7 @@ class YelpSearchRequest {
 extension YelpSearchRequest : CustomStringConvertible {
   
   var description : String {
-    return "term=\(YelpSearchRequest.defaultSearchTerm)&location=\(self.zipcode.pathEncodedString)&radius_filter=\(self.radius)&sort=\(self.sortOrder)&offset=\(self.currentOffsetPosition)"
+    return "term=\(YelpSearchRequest.defaultSearchTerm)&location=\(self.zipcode.pathEncodedString)&radius_filter=\(self.radius)&sort=\(self.sortOrder)&offset=\(self.currentOffsetPosition)&limit=3"
   }
 }
 

@@ -43,7 +43,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="w4m-rW-Ec5"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <outlet property="delegate" destination="H1C-3X-gJu" id="BNw-3n-DNv"/>
                                 </connections>
@@ -66,19 +66,70 @@
                             <constraint firstItem="EbA-5G-c1k" firstAttribute="top" secondItem="BrQ-Rw-r1C" secondAttribute="bottom" id="oNr-5N-1HX"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Yelp Search" id="LOh-qf-Doq">
-                        <barButtonItem key="leftBarButtonItem" title="Filter" id="uAm-mZ-obS"/>
-                        <barButtonItem key="rightBarButtonItem" title="Search" id="1hq-kS-hiC"/>
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="uAm-mZ-obS">
+                            <connections>
+                                <segue destination="Upm-o2-Hhd" kind="popoverPresentation" identifier="filterpopover" popoverAnchorBarButtonItem="uAm-mZ-obS" id="bNW-0v-AdN">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="filter" destination="uAm-mZ-obS" id="f7S-G5-2Qs"/>
-                        <outlet property="search" destination="1hq-kS-hiC" id="YE8-EF-28n"/>
                         <outlet property="searchBar" destination="BrQ-Rw-r1C" id="GCM-Fa-L0g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMF-ZJ-aaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="606" y="468"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="yGS-S1-uW5">
+            <objects>
+                <viewController id="Upm-o2-Hhd" customClass="FilterViewController" customModule="YelpFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Esl-Do-59g"/>
+                        <viewControllerLayoutGuide type="bottom" id="xuL-SR-qKR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JUL-N2-EXP">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search Radius" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8l-4Z-Hwa">
+                                <rect key="frame" x="16" y="21" width="248" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25000" minValue="500" maxValue="50000" translatesAutoresizingMaskIntoConstraints="NO" id="SuB-KF-taQ">
+                                <rect key="frame" x="14" y="50" width="252" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="13F-Ij-gzl"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged" destination="Upm-o2-Hhd" eventType="valueChanged" id="He6-U8-ror"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="SuB-KF-taQ" secondAttribute="leading" id="DBs-wy-vH8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SuB-KF-taQ" secondAttribute="trailing" id="IAj-Ks-ySg"/>
+                            <constraint firstItem="xuL-SR-qKR" firstAttribute="top" secondItem="SuB-KF-taQ" secondAttribute="bottom" constant="20" id="Q4C-nG-cVI"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="280" height="100"/>
+                    <connections>
+                        <outlet property="label" destination="Z8l-4Z-Hwa" id="qcQ-FG-yZs"/>
+                        <outlet property="slider" destination="SuB-KF-taQ" id="PNu-V7-406"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o69-2W-egK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-134" y="1214"/>
         </scene>
         <!--Yelp Results View Controller-->
         <scene sceneID="IIt-GI-xgC">
@@ -197,9 +248,6 @@
                             <outlet property="delegate" destination="T8u-M8-dNG" id="Dvl-Px-J7L"/>
                         </connections>
                     </tableView>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="FIY-CK-2Zr">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="meO-4S-4GJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

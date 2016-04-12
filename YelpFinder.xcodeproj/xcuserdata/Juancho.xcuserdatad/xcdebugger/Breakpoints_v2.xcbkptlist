@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpFinder/YelpSearchViewController.swift"
-            timestampString = "481743828.0961"
+            timestampString = "482139150.765246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpFinder/YelpSearchViewController.swift"
-            timestampString = "481736266.762239"
+            timestampString = "482139150.765246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "loadFirstZipcode()"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpFinder/YelpResultsViewController.swift"
-            timestampString = "481747808.363598"
+            timestampString = "482138511.936887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -228,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpFinder/YelpResultsViewController.swift"
-            timestampString = "481747808.363598"
+            timestampString = "482138511.936887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -244,7 +244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpFinder/YelpResultsViewController.swift"
-            timestampString = "481747808.363598"
+            timestampString = "482138511.936887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -260,7 +260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpFinder/YelpResultsViewController.swift"
-            timestampString = "481747808.363598"
+            timestampString = "482138511.936887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -282,6 +282,70 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "dynamicHeightForRestaurant(_:constraintedToWidth:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YelpFinder/YelpResultsViewController.swift"
+            timestampString = "482138511.936887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "updateCell(_:withRestaurantAtIndexPath:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YelpFinder.YelpResultsViewController.updateCell (YelpFinder.YelpResultCell, withRestaurantAtIndexPath : __ObjC.NSIndexPath) -&gt; ()"
+                  moduleName = "YelpFinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Juancho/Documents/YelpFinder/YelpFinder/YelpResultsViewController.swift"
+                  timestampString = "482137099.338436"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "2076">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YelpFinder.YelpResultsViewController.updateCell (YelpFinder.YelpResultCell, withRestaurantAtIndexPath : __ObjC.NSIndexPath) -&gt; ()"
+                  moduleName = "YelpFinder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Juancho/Documents/YelpFinder/YelpFinder/YelpResultsViewController.swift"
+                  timestampString = "482137099.338584"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "2142">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YelpFinder/YelpSearchViewController.swift"
+            timestampString = "482139482.607043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

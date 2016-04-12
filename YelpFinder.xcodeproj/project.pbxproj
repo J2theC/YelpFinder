@@ -26,6 +26,7 @@
 		A042743A1CB500C100ABBA16 /* RestaurantFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274391CB500C100ABBA16 /* RestaurantFinder.swift */; };
 		A042743C1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042743B1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift */; };
 		A042743F1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */; };
+		A05D2DC51CBCDA6100FA41CF /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D2DC41CBCDA6100FA41CF /* FilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A04274391CB500C100ABBA16 /* RestaurantFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantFinder.swift; sourceTree = "<group>"; };
 		A042743B1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleRestaurantRequest.swift; sourceTree = "<group>"; };
 		A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExtension.swift; sourceTree = "<group>"; };
+		A05D2DC41CBCDA6100FA41CF /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				A04273FC1CB09F8800ABBA16 /* AppDelegate.swift */,
 				A04274211CB0A17000ABBA16 /* YelpSearchViewController.swift */,
 				A04274231CB0A7E700ABBA16 /* YelpResultsViewController.swift */,
+				A05D2DC41CBCDA6100FA41CF /* FilterViewController.swift */,
 				A04274251CB2050B00ABBA16 /* YelpResultCell.swift */,
 				A04274391CB500C100ABBA16 /* RestaurantFinder.swift */,
 				A04274291CB258AA00ABBA16 /* ZipcodeFinder.swift */,
@@ -256,6 +259,7 @@
 				A042743A1CB500C100ABBA16 /* RestaurantFinder.swift in Sources */,
 				A042743C1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift in Sources */,
 				A042742C1CB270A500ABBA16 /* YelpSearchRequest.swift in Sources */,
+				A05D2DC51CBCDA6100FA41CF /* FilterViewController.swift in Sources */,
 				A04274241CB0A7E700ABBA16 /* YelpResultsViewController.swift in Sources */,
 				A042742A1CB258AA00ABBA16 /* ZipcodeFinder.swift in Sources */,
 				A04273FD1CB09F8800ABBA16 /* AppDelegate.swift in Sources */,

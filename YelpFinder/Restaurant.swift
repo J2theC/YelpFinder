@@ -8,6 +8,7 @@ class Restaurant : CustomStringConvertible {
   let identifier : String
   let name : String
   let reviewsDescription : String?
+  let rating : Double
   let category : String?
   let address : String
   let priceDescription : String?
@@ -37,8 +38,10 @@ class Restaurant : CustomStringConvertible {
     }
     if let ratings = dictionary["rating"]  as? Float  where ratings > 0 {
       reviewsDescription = String (format: "%.1f out of 5 stars", ratings)
+      rating = Double(ratings)
     } else {
       reviewsDescription = nil
+      rating = 0
     }
     if let geometry = dictionary["geometry"] as? [String : AnyObject], let location = geometry["location"] as? [String : AnyObject], let latitude = location["lat"] as? Double,  let longitude = location["lng"] as? Double {
       let locationCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)

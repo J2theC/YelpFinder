@@ -41,5 +41,6 @@ class YelpResultCell: UITableViewCell {
   @IBOutlet weak var price: UILabel!
   @IBOutlet weak var address: UILabel!
   @IBOutlet weak var restaurantType: UILabel!
+  @IBOutlet weak var ratingsView: RatingsView!
   var dataIdentifier = String()
 }

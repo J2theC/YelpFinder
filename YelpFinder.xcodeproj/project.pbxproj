@@ -27,6 +27,7 @@
 		A042743C1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042743B1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift */; };
 		A042743F1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */; };
 		A05D2DC51CBCDA6100FA41CF /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D2DC41CBCDA6100FA41CF /* FilterViewController.swift */; };
+		A05D2DC71CBE1FD700FA41CF /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D2DC61CBE1FD700FA41CF /* RatingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		A042743B1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleRestaurantRequest.swift; sourceTree = "<group>"; };
 		A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExtension.swift; sourceTree = "<group>"; };
 		A05D2DC41CBCDA6100FA41CF /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		A05D2DC61CBE1FD700FA41CF /* RatingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				A04274271CB216EF00ABBA16 /* Restaurant.swift */,
 				A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */,
 				A04274311CB2C0A100ABBA16 /* DictionaryExtension.swift */,
+				A05D2DC61CBE1FD700FA41CF /* RatingsView.swift */,
 				A04274331CB2C13C00ABBA16 /* StringExtension.swift */,
 				A04274001CB09F8800ABBA16 /* Main.storyboard */,
 				A04274061CB09F8800ABBA16 /* Assets.xcassets */,
@@ -254,6 +257,7 @@
 				A04274321CB2C0A100ABBA16 /* DictionaryExtension.swift in Sources */,
 				A04274221CB0A17000ABBA16 /* YelpSearchViewController.swift in Sources */,
 				A04274341CB2C13C00ABBA16 /* StringExtension.swift in Sources */,
+				A05D2DC71CBE1FD700FA41CF /* RatingsView.swift in Sources */,
 				A04274051CB09F8800ABBA16 /* YelpFinder.xcdatamodeld in Sources */,
 				A04274281CB216EF00ABBA16 /* Restaurant.swift in Sources */,
 				A042743A1CB500C100ABBA16 /* RestaurantFinder.swift in Sources */,

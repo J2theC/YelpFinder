@@ -57,6 +57,7 @@ extension YelpResultsViewController {
     cell.address.text = restaurant.address
     cell.restaurantType.text = restaurant.category
     cell.price.text = restaurant.priceDescription
+    cell.ratingsView.currentScore = restaurant.rating
     if let baseLocation = self.baseLocation, let restaurantCoordinate = restaurant.coordinate {
       cell.distance.text = self.distanceFormatter.stringFromDistance(baseLocation.distanceFromLocation(CLLocation(latitude: restaurantCoordinate.latitude, longitude: restaurantCoordinate.longitude)))
     } else {

@@ -176,9 +176,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-9m-9Rf">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-9m-9Rf" customClass="RatingsView" customModule="YelpFinder" customModuleProvider="target">
                                             <rect key="frame" x="77" y="26" width="80" height="15"/>
-                                            <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="2iU-ga-t0f"/>
                                                 <constraint firstAttribute="height" constant="15" id="5Fk-Tc-E5e"/>
@@ -235,6 +235,7 @@
                                     <outlet property="distance" destination="beZ-Gw-Nda" id="HT6-9Y-FZU"/>
                                     <outlet property="name" destination="U4g-2v-yfP" id="czv-eA-wC7"/>
                                     <outlet property="price" destination="Qjc-CN-Gom" id="oIu-k9-e01"/>
+                                    <outlet property="ratingsView" destination="bL4-9m-9Rf" id="nRO-Ow-7Y2"/>
                                     <outlet property="restaurantImage" destination="i9I-Yz-CGZ" id="8bo-GY-b5k"/>
                                     <outlet property="restaurantType" destination="tOb-ZK-52Y" id="Mx1-Lv-esv"/>
                                     <outlet property="reviews" destination="mxc-5T-Vgd" id="gbA-O6-MAZ"/>

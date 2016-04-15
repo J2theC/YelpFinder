@@ -2,14 +2,16 @@
 import Foundation
 import CoreLocation
 
-class GoogleRestaurantRequest : CustomStringConvertible
-{
+class GoogleRestaurantRequest : CustomStringConvertible {
+  
+  static let defaultRadius  = 1000
+  
   let location : CLLocation
-  let radius : Int
+  var radius : Int
   let openRestriction : Bool
   private (set) var pageToken : Int = 0
   
-  init? (location: CLLocation, radius: Int = 1000, openNow: Bool = false) {
+  init? (location: CLLocation, radius: Int = GoogleRestaurantRequest.defaultRadius, openNow: Bool = false) {
     self.location = location
     self.radius = radius
     self.openRestriction = openNow

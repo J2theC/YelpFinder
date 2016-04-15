@@ -6,7 +6,8 @@ class YelpSearchViewController : UIViewController  {
   @IBOutlet weak var filter: UIBarButtonItem!
   @IBOutlet weak var search: UIBarButtonItem!
   let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge )
-  let titleItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
+  let activityLabel = UILabel()
+  let activityTitleFont = UIFont.boldSystemFontOfSize(14.0)
   private var zipcodeFinder : ZipcodeFinder?
   private let resultsSegueIdentifier = "resultsSegue"
   private let filterSegueIdentifier = "filterpopover"
@@ -24,7 +25,13 @@ class YelpSearchViewController : UIViewController  {
     self.activityIndicator.tintColor = UIColor.blueColor()
     let activityItem = UIBarButtonItem(customView: self.activityIndicator)
     let spaceItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-    self.toolbarItems = [spaceItem, self.titleItem, spaceItem, activityItem]
+    self.activityLabel.numberOfLines = 2;
+    self.activityLabel.minimumScaleFactor = 0.5
+    self.activityLabel.textAlignment = .Center
+    self.activityLabel.font = self.activityTitleFont
+    let titleItem = UIBarButtonItem(customView: self.activityLabel)
+    self.activityLabel.sizeToFit()
+    self.toolbarItems = [spaceItem, titleItem, spaceItem, activityItem]
     self.activityIndicator.hidesWhenStopped = true
   }
   
@@ -36,6 +43,7 @@ class YelpSearchViewController : UIViewController  {
         if let request =  GoogleRestaurantRequest(location: location) {
           self.showLoadingIndicatorForSearchParamater(zipcode)
           self.restaurantFinder.findRestaurantsWithRequest(request) { values in
+            self.request = request
             self.resultsViewController?.showRestaurants(values, fromBaseLocation: location)
             self.stopLoadingIndicator()
           }
@@ -55,6 +63,9 @@ class YelpSearchViewController : UIViewController  {
       if let popover = destination.popoverPresentationController {
         popover.delegate = self
       }
+      if let request = self.request {
+        destination.originalValue = Float(request.radius)
+      }
       destination.delegate = self
       break
     default:
@@ -64,12 +75,12 @@ class YelpSearchViewController : UIViewController  {
   
   func showLoadingIndicatorForSearchParamater(searchParamater: String) {
     guard !searchParamater.isEmpty else { return }
-    self.titleItem.title = "Finding restaurants in \(searchParamater)..."
+    self.activityLabel.text = "Finding restaurants in \(searchParamater)..."
     self.activityIndicator.startAnimating()
   }
   
   func stopLoadingIndicator() {
-    self.titleItem.title = nil
+    self.activityLabel.text = nil
     self.activityIndicator.stopAnimating()
   }
   
@@ -87,6 +98,7 @@ extension YelpSearchViewController : UISearchBarDelegate {
         self.showLoadingIndicatorForSearchParamater(text)
         if let location = location, let request = GoogleRestaurantRequest(location: location) {
           self.restaurantFinder.findRestaurantsWithRequest(request , completion: { (restaurantData) in
+            self.request = request
             self.resultsViewController?.showRestaurants(restaurantData, fromBaseLocation: request.location)
             self.stopLoadingIndicator()
           })
@@ -114,7 +126,14 @@ extension YelpSearchViewController : ZipcodeFinderDelegate {
 
 extension YelpSearchViewController : FilterViewControllerDelegate {
   
-  
+  func filterViewController(filterViewController: FilterViewController, didChangeFilterToValue value: Float) {
+    if let request = self.request {
+      request.radius = Int(value)
+      self.restaurantFinder.findRestaurantsWithRequest(request, completion: { restaurants in
+        self.resultsViewController?.showRestaurants(restaurants, fromBaseLocation: request.location, clearPrevious: true)
+      })
+    }
+  }
 }
 
 extension YelpSearchViewController : UIPopoverPresentationControllerDelegate {

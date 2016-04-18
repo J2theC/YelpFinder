@@ -18,11 +18,8 @@
 		A04274261CB2050B00ABBA16 /* YelpResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274251CB2050B00ABBA16 /* YelpResultCell.swift */; };
 		A04274281CB216EF00ABBA16 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274271CB216EF00ABBA16 /* Restaurant.swift */; };
 		A042742A1CB258AA00ABBA16 /* ZipcodeFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274291CB258AA00ABBA16 /* ZipcodeFinder.swift */; };
-		A042742C1CB270A500ABBA16 /* YelpSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042742B1CB270A500ABBA16 /* YelpSearchRequest.swift */; };
 		A04274321CB2C0A100ABBA16 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274311CB2C0A100ABBA16 /* DictionaryExtension.swift */; };
 		A04274341CB2C13C00ABBA16 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274331CB2C13C00ABBA16 /* StringExtension.swift */; };
-		A04274361CB2CEA200ABBA16 /* YelpURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274351CB2CEA200ABBA16 /* YelpURLRequest.swift */; };
-		A04274381CB2CEFE00ABBA16 /* YelpURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274371CB2CEFE00ABBA16 /* YelpURLSession.swift */; };
 		A042743A1CB500C100ABBA16 /* RestaurantFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04274391CB500C100ABBA16 /* RestaurantFinder.swift */; };
 		A042743C1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042743B1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift */; };
 		A042743F1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */; };
@@ -56,12 +53,9 @@
 		A04274251CB2050B00ABBA16 /* YelpResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpResultCell.swift; sourceTree = "<group>"; };
 		A04274271CB216EF00ABBA16 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		A04274291CB258AA00ABBA16 /* ZipcodeFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipcodeFinder.swift; sourceTree = "<group>"; };
-		A042742B1CB270A500ABBA16 /* YelpSearchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpSearchRequest.swift; sourceTree = "<group>"; };
 		A042742D1CB2AD3200ABBA16 /* YelpFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YelpFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		A04274311CB2C0A100ABBA16 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		A04274331CB2C13C00ABBA16 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		A04274351CB2CEA200ABBA16 /* YelpURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpURLRequest.swift; sourceTree = "<group>"; };
-		A04274371CB2CEFE00ABBA16 /* YelpURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpURLSession.swift; sourceTree = "<group>"; };
 		A04274391CB500C100ABBA16 /* RestaurantFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantFinder.swift; sourceTree = "<group>"; };
 		A042743B1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleRestaurantRequest.swift; sourceTree = "<group>"; };
 		A042743E1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExtension.swift; sourceTree = "<group>"; };
@@ -144,9 +138,6 @@
 		A042743D1CB64FA300ABBA16 /* Yelp Files */ = {
 			isa = PBXGroup;
 			children = (
-				A042742B1CB270A500ABBA16 /* YelpSearchRequest.swift */,
-				A04274351CB2CEA200ABBA16 /* YelpURLRequest.swift */,
-				A04274371CB2CEFE00ABBA16 /* YelpURLSession.swift */,
 			);
 			name = "Yelp Files";
 			sourceTree = "<group>";
@@ -252,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A04274381CB2CEFE00ABBA16 /* YelpURLSession.swift in Sources */,
 				A042743F1CB6562700ABBA16 /* CLLocationCoordinate2DExtension.swift in Sources */,
 				A04274321CB2C0A100ABBA16 /* DictionaryExtension.swift in Sources */,
 				A04274221CB0A17000ABBA16 /* YelpSearchViewController.swift in Sources */,
@@ -262,12 +252,10 @@
 				A04274281CB216EF00ABBA16 /* Restaurant.swift in Sources */,
 				A042743A1CB500C100ABBA16 /* RestaurantFinder.swift in Sources */,
 				A042743C1CB506BF00ABBA16 /* GoogleRestaurantRequest.swift in Sources */,
-				A042742C1CB270A500ABBA16 /* YelpSearchRequest.swift in Sources */,
 				A05D2DC51CBCDA6100FA41CF /* FilterViewController.swift in Sources */,
 				A04274241CB0A7E700ABBA16 /* YelpResultsViewController.swift in Sources */,
 				A042742A1CB258AA00ABBA16 /* ZipcodeFinder.swift in Sources */,
 				A04273FD1CB09F8800ABBA16 /* AppDelegate.swift in Sources */,
-				A04274361CB2CEA200ABBA16 /* YelpURLRequest.swift in Sources */,
 				A04274261CB2050B00ABBA16 /* YelpResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
